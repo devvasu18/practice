@@ -1,0 +1,88 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header Style */
+header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Main Content */
+main {
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+section {
+    margin-bottom: 20px;
+}
+
+/* Product List Style */
+#product-list ul,
+#discounted-products ul {
+    list-style: none;
+    padding: 0;
+}
+
+#products li,
+#discounted-products li {
+    padding: 10px;
+    background: #f8f8f8;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button and Input */
+input, button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #0e151d;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16202b;
+}
+
+/* Footer */
+footer {
+    /* margin-left:250px;
+    margin-right:9px; */
+    text-align: center;
+    width: 100%;
+    background: #131618;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    
+}
