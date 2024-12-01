@@ -1,30 +1,30 @@
- // chapter =1 
+/* // chapter =1 
 
 // var, let , const //
 ////// var ko remention bhi kar skte hai and redeclare bhi 
-var a ="vasu";
+var a ="varvasu";
 console.log(a);
 
-var a ="vasu";
+var a ="varvasu";
 console.log(a);
 
-var b ="vasu";
+var b ="varvasu";
 console.log(b);
 
-var b ='vasu';
+var b ='varvasu';
 console.log(b);
 
 //////// let ki value change kar skte hai lekin remention nhi kar skte 
-{let b ="vasu";
+{let b ="letvasu";
     console.log(b)};
 
-{let b = 'vasu'    ;
+{let b = 'letvasu';
 console.log(b)};
 
-let c="vasu";
+let c="letvasu";
 console.log(c);
 
-{let c="vasu";
+{let c="letvasu";
     console.log(c)};
  
 
@@ -35,7 +35,7 @@ let b1 = 123 ;
 let c1= true ;
 let d1= BigInt("20")+BigInt(20);
 let e1 = "vasu";
-let f1 = Symbol ( "I am nice simbol");
+let f1 = Symbol 
 let g1 = undefined;
 console.log(a1,b1,c1,d1,e1,f1,g1)
 
@@ -132,8 +132,8 @@ assignment /=5  // same as assignment = assignment +5
 console.log(assignment /a6)  
 
 //  comparison opeerator 
-let comp1 = 6 
-let comp2=7 
+let comp1 = 5
+let comp2="5"
 console.log("comp1==comp2" ,comp1==comp2)
 
 console.log("comp1!=comp2" ,comp1!=comp2)
@@ -150,11 +150,11 @@ console.log("comp1<comp2" ,comp1<comp2)
 let a7 =5
 let b7 = 6
 console.log(a7<b7 && a7==b7)
-console.log(a7>b7 || a7==b7)
+console.log(a7<b7 || a7==b7)
 console.log(!false)
 console.log(!true )
 
-
+*/
 // condiitional statement 
 
 //if
@@ -168,7 +168,7 @@ a9= Number.parseInt(a9)
 if (a9>18){alert("this is valid age ")}
 else {alert("this is an unvalid age" )}
 
-//if else if else
+//if elseif else
 
 let  a10 = prompt("hlo what is your age ");
 a10 = Number.parseInt(a10);
@@ -225,7 +225,7 @@ let age15 = prompt("age??")
 let a15 = age15 > 18 ? "you can drive" : "you cannot drive"
 console.log(a15)
 
-
+/*
 // chapter 3 - loops and function 
  // types of loops  in javascript 
 
