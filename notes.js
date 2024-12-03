@@ -156,22 +156,22 @@ console.log(!true )
 
 */
 // condiitional statement 
-
+/*
 //if
 let a8 = prompt("age?")
-a8= Number.parseInt(a8)
+//a8= Number.parseInt(a8)
 if (a8>18){alert("this is valid age ")}
 
 //if else
-let a9 = prompt("hey whats your age ?")
-a9= Number.parseInt(a9)
+let a9 =// prompt("hey whats your age ?")
+//a9= Number.parseInt(a9)
 if (a9>18){alert("this is valid age ")}
 else {alert("this is an unvalid age" )}
 
 //if elseif else
 
-let  a10 = prompt("hlo what is your age ");
-a10 = Number.parseInt(a10);
+let  a10 = //prompt("hlo what is your age ");
+//a10 = Number.parseInt(a10);
 if(a10<0)
      {alert("this is invalid age ");} 
 else if (a10<9){alert("you are a kid and you cannot even think of driving");}
@@ -181,14 +181,14 @@ else {alert("you can  drive now as yo are above 18")}
     
 
 //Q  use logic operator to find whether the age of a person lies between 10 and 20?
-let age11 = prompt (" what is your age")
+//let age11 = prompt (" what is your age")
 if (age11>10 && age11<20)
-{console.log("your age lies between 10 and   20 ")}
-else {console.log("your age doesnt lies between 10 and 20 ")}
+//{console.log("your age lies between 10 and   20 ")}
+//else {console.log("your age doesnt lies between 10 and 20 ")}
 
 
 // Q  demonstrate the use of switch case statements in javascript 
-let age12 = prompt("what is your age?")
+//let age12 = prompt("what is your age?")
 
 switch(age12){
     case '12' : 
@@ -210,11 +210,11 @@ switch(age12){
 
 //Q  write a javascript program to find whether a number is divisible by 2 and 3
 let num13 =prompt ("ur age ?")
-num13 = Number.parseInt(num13)
+//num13 = Number.parseInt(num13)
 if (num13 %2 == 0 && num13%3 == 0 ){console.log ("your age is divisible by 2 and 3 ")}
 else{console.log("your age  is not divisible by 2 and 3 ")}
 
-//Q   write a javascript program to find whether a numbre id divisible by either 2 or 3 
+//Q   write a javascript program to find whether a numbre is divisible by either 2 or 3 
 let num14 = prompt ("what is ur age")
 num14 = Number.parseInt(num14)
 if (num14 %2 == 0 || num14%3 == 0 ){console.log ("your age is divisible by 2 and 3 ")}
@@ -225,13 +225,15 @@ let age15 = prompt("age??")
 let a15 = age15 > 18 ? "you can drive" : "you cannot drive"
 console.log(a15)
 
-/*
+
 // chapter 3 - loops and function 
  // types of loops  in javascript 
 
  // for loop - loop a block of code no. of times 
  for (let i = 0 ; i < 34 ; i++)
      {console.log (i)}
+
+
 
  // program to add first n natural numbers
  let sum = 0 
@@ -246,11 +248,11 @@ console.log(a15)
 
  // for in loop 
 
- let obj = {vasu: 50,
-            vasu1 : 51,
-            vasu2: 52,
-            vasu3: 53,
-            vasu4: 54}
+ let obj = {vasu : 50,
+            vasu1  : 51,
+            vasu2 : 52,
+            vasu3 : 53,
+            vasu4 : 54}
  for (let a17 in obj){console.log ("marks of " + a17+"are"+ obj[a17])}          
  
  
@@ -272,7 +274,7 @@ let n20 = prompt("enter the value of n ")
 n20 = Number.parseInt(n20)
 let i20 = 0 ;
 do{console.log(i20) ; i20++ ; }while (i20<n20);
-   
+   */
     
 
 // function in javascript 
@@ -313,15 +315,15 @@ console.log("one plus Average of a and c is " , onePlusAvg(a21,c21))
     
     
     
-    // write a program to print " try again" until the user enters  the correct number 
+   //  write a program to print " try again" until the user enters  the correct number 
     
-    // let cn = 43
-    // let i
-    // while (i != cn) {
+     //let cn = 43
+     //let i
+     //while (i != cn) {
         // console.log("Try again")
-        // i = prompt("Enter a number")
-    // }
-    // console.log("You have entered a correct number")
+         //i = prompt("Enter a 43 do not enter any other no.")
+     //}
+     //console.log("You have entered a correct number")
     
     
     
@@ -349,11 +351,11 @@ console.log("one plus Average of a and c is " , onePlusAvg(a21,c21))
     console.log(word26)
     
 
-    // ek code ko bich me se agar next line me show kaena ho toh \n ka use karna hai 
+    // To break a string into a new line in JavaScript, use \n. When the string is rendered (e.g., in a console or an alert), the part after \n will appear on the next line.
+
     let word27 = 'vasudev\nsharma' 
     console.log(word27)
-
-
+ 
     // kisi words ko uper case me login karna ho toh 
     let word29 = "sharma" 
     console.log(word29.toUpperCase())
@@ -372,7 +374,7 @@ console.log("one plus Average of a and c is " , onePlusAvg(a21,c21))
     console.log(word32.replace("sha","ka"))
 
 
-    // agar strings ko jodna ho conact ki help se 
+    // agar strings ko jodna ho concat ki help se 
     let name34= "vasu"
     let freind34= "shubham"
     console.log(name34.concat(" is a freind of ", freind34 , " ok"))
@@ -394,7 +396,6 @@ console.log("one plus Average of a and c is " , onePlusAvg(a21,c21))
  //the word "..." is in the sentense and agar vo word nhi ho toh false likha ana chaiye and
  // the word "..." is  not in the sentense 
 
-
       const sentence = 'The quick brown fox jumps over the lazy dog.';
 const word = 'fox';
 console.log(sentence.includes(word))
@@ -402,8 +403,6 @@ console.log(`The word "${word}"
     ${sentence.includes(word) ? 'is' : 'is not'}
      in the sentence`); 
    
-
-
   //Q EXTRACT the amount out of this string "plese give rs 1000"
   let str2 = "Please give Rs 1000"
   let amount = Number.parseInt(str2.slice(15))
@@ -443,17 +442,17 @@ console.log(d38)
 
 //pop method 
 let num39 =  [4,34,5,65,7,87]
-let a39 = num39.pop()   // pop returens  the poped elemet 
+let a39 = num39.pop()   // pop returens  the poped elemet //87 will be returned out side of the array and all are return in array 
 console.log(num39,a39)
 
 //push method 
 let num40 =[5,3,17,90]
-let a40 = num40.push(43) // push retuns the new array length
+let a40 = num40.push(43) // push retuns the new array length // added 43 
 console.log(num40,a40)
 
 //shift 
 let num41 =[9,4,1,60]
-let a41 = num41.shift() //  shift removes  the first element and returns 
+let a41 = num41.shift() //  shift removes  the first element and returns //9 will removed 
 console.log(a41 , num41)
 
 // unshift 
@@ -461,44 +460,48 @@ let num42 =[1,2,3,4,5]
 let a42 = num42.unshift(43) //  unshift add element to the begining and returns new array length  
 console.log(a42 , num42)
 
-
-
-
-
-
-/setTimeout
 //setTimeout
-document.write("hello");
+
+let message = document.createElement("p");
+message.textContent = "hello";
+document.body.appendChild(message);
+
 let av = setTimeout(function () {
-  alert("this alert is in side the settimeout ");
+  console.log("this alert is in side the setTimeout ");
 }, 3000);
 // agar kuch alert ko kuch time ke bad me show krna ho toh
 let bv = prompt("do u wnt to run the setttimeout ?");
-if ("n" == bv) {
- //// clearTimeout(av);
+if (bv.toLowerCase() ==="no" ) {
+  // cleartimeout ka mtlb kisi alert ko show nhi krna ho  toh ya kisi alert ko silent krna ho usko rokna ho toh cleartimeout kr skte h
+  clearTimeout(av);
+  console.log("setTimeout was canceled .");
+}else{
+console.log("setTimeout will execute .")
 }
+console.log("timeout id :",av);
 
-//clearTimeout
-// cleartimeout ka mtlb kisi alert ko show nhi krna ho  toh ya kisi alert ko silent krna ho usko rokna ho toh cleartimeout kr skte h
-console.log(av);
 
-document.write("hello");
+
+let message1 = document.createElement("p");
+message1.textContent = "hello";
+document.body.appendChild(message1);
 const sumv= (a1, b, c) => {
   console.log("yes i am running" + (a1 + b + c)); // agar a+b+c ko add krna ho toh
 };
-setTimeout(sumv, 6000, 3, 5, 7);
+setTimeout(sumv, 6000, 3, 5, 7,9,8);
 
 //setinterval
 setInterval(function () {
-//////  alert("hlo vasu");
+ //alert("hlo vasu");
 }, 3000);
 //setinterval har kuch second ke bad alert ko show karna h toh setinterval use kr na h
 
-// browser events
 
+
+// browser events
 //mouse event
 //mouse events :click , context menu(right click ), mouseover/ mouseout , mousedown /mouseup, mousemove
-// onmouseenter="alert('container ke andar mouse gaya ')"
+// write this into html element// onmouseenter="alert('container ke andar mouse gaya ')"
 /*agar kisi element ke uper mouse leke jaynge toh
  alert ayega lekin yeh html ke element  andar likhna hoga
 apan alert bhi karva skte h and console.log bhi kr skte h */
@@ -551,14 +554,7 @@ class vasu {
   av1.play();
   
   //static method in class  (static keyword)  (static method) (static property) (overhide)
-  /*/////for wrting gevenname first letter in capital letter we can use  
-         this.name = vasu3.capitalize(givenname);
-         static capitalize(givenname) {
-         return (
-         givenname.charAt(0).toUpperCase() + givenname.substr(1, givenname.length)
-         );}
-  */ //////
-  
+  /*/////for wrting gevenname first letter in capital letter we can use capitalize methode  */
   class vasu3 {
     constructor(givenname, age) {
       this.name = givenname;
@@ -636,7 +632,7 @@ class vasu {
   try {
     console.log(a instanceof vasu5);
 } catch (error) {
-    console.error("An error occurred:", error.message);
+    console.error("A doesn't belongs in vasu5 :", error.message);
   
 } //a is not created by vasu5 class so it will return false
   
@@ -689,13 +685,13 @@ class vasu {
   
   //hosting
   
-  greet(); // if we mwntion greet top on function greet then it will not show any error because hosting takes function up automatically
+  greet(); // if we mention greet before intializing then it will not show any error because hosting takes function up automatically
   function greet() {
     console.log("good mrng");
   }
   
-  console.log(a15v); //undefined because a15 is not mentioned in the top
-  var a15v = 10; // by let and const this will show an error because console is before mention so let and const property not alow
+  console.log(a15v); //undefined because a15 is not initialized
+  var a15v = 10; // by let and const this will show an error because console is before mention so let and const property not alow if we use var there will be undefined 
   console.log(a15v);
   
   //closer

@@ -72,11 +72,13 @@ console.log(multiply(4, 5));
 //control flow 
 
 // if-else
-let weather = "rainy";
+let weather = prompt("is it rainy or sunny ?");
 if (weather === "sunny") {
     console.log("Wear sunglasses!");
-} else {
+} else if (weather === "rainy") {
     console.log("Carry an umbrella!");
+}else{
+    console.log("stay prepared for any weather!")
 }
 
 // Ternary Operator
@@ -100,7 +102,10 @@ switch (fruit) {
 
 // for loop
 for (let i = 1; i <= 5; i++) {
-    console.log("Number:", i);
+    console.log("Roll NO.:", i);
+}
+for (let i=0 ;i<=5;i++){
+    console.log(i);
 }
 
 // while loop
@@ -117,8 +122,19 @@ do {
     num++;
 } while (num < 3);
 
-// arrays
+//for in loop
+let personv = { name: "vasu", age: 18, city: "bangalore" };
+for (let key in personv) {
+    console.log(key, personv[key]); // Outputs: name John, age 25, city New York
+}
 
+//for of loop
+let str = "Hello";
+for (let char of str) {
+    console.log(char); // Outputs: H, e, l, l, o
+}
+
+// arrays
 let colors = ["red", "blue", "green"];
 console.log(colors[1]);            // Access element
 colors.push("yellow");             // Add an element
@@ -209,22 +225,28 @@ let person1 = {
     name:"vasu",
     age:18
 };
-let { name: personName, age: personAge } = person;
-console.log(personName, personAge);
+let { name: personName, age: personAge } = person1;
+console.log(person1 ,personName,personAge);
 
 // Spread Operator
 let newColors = [...colors, "purple"];
 console.log(newColors);
 
 // Classes
-class Animal {
-    constructor(name) {
-        this.name = name;
+class Person {
+    constructor(name, age) {
+        this.name = name; // Assign name to the object
+        this.age = age;   // Assign age to the object
     }
-    makeSound() {
-        console.log(`${this.name} makes a sound!`);
+
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
     }
 }
-let dog = new Animal("Dog");
-dog.makeSound();
 
+// Create an instance of the class
+let person1v = new Person("John", 25);
+person1v.greet(); // Output: Hello, my name is John and I am 25 years old.
+ 
+let person2v = new Person("vasu",18);
+person2v.greet();
