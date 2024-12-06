@@ -335,7 +335,10 @@ console.log("one plus Average of a and c is " , onePlusAvg(a21,c21))
     console.log(mean(4, 5, 6, 7))
     
    
-
+    // split(''): Converts the string into an array of characters.
+    // reverse(): Reverses the array.
+    // join(''): Joins the array back into a string.
+    
  
     //chapter - 4 strings 
 
@@ -738,3 +741,21 @@ class vasu {
     return (v * a * s) / 100;
   }
   console.log(bhyaz(100000, 1.5, 1));
+
+
+  //clousers 
+  function outer() {
+    let counter = 0;
+    
+    function inner() {
+      counter++;
+      console.log(counter);
+    }
+  
+    return inner;  // Returning the inner function
+  }
+  
+  const counterFunc = outer();
+  counterFunc();  // Output: 1
+  counterFunc();  // Output: 2
+  
