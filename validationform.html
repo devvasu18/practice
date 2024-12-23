@@ -1,144 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form with Validation</title>
-  <style>
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    /* Container */
-    .container {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: left;
-    }
-
-    /* Form Group */
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    /* Form Label */
-    label {
-      font-size: 1rem;
-      font-weight: bold;
-    }
-
-    /* Form Input */
-    input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    input:focus {
-      border-color: #007BFF;
-    }
-
-    /* Error message */
-    .error-message {
-      color: red;
-      font-size: 0.875rem;
-      display: block;
-      margin-top: 5px;
-    }
-
-    /* Submit Button */
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="validationform.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Sign Up Form</h1>
-    <form id="signupForm">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <span class="error-message" id="emailError"></span>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button type="submit">Submit</button>
+    <h1>fill the form</h1>
+    </h1>
+    <form id="frm" action="">
+        <label for="name">name :-</label>
+        <input type="text" id="name" name="name" placeholder="write in lowercase"> <br><br>
+
+        <label for="mobile_no" >mob.no :- </label>
+        <input type="text" id="mobile_no" name="mobile_no"  > <br><br>
+
+        <label for="email" >Gmail :-</label>
+        <input type="email" id="email" name="email" ><br><br>
+
+        <label for="password">password :-</label>
+        <input type="password" id="password" name="password" >
+
+       <button type="submit">submit</button>
     </form>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('signupForm');
-      const emailInput = document.getElementById('email');
-      const emailError = document.getElementById('emailError');
-
-      form.addEventListener('submit', (event) => {
-        let valid = true;
-
-        // Validate name (not empty)
-        const name = form.elements['name'].value;
-        if (name.trim() === '') {
-          alert('Name is required');
-          valid = false;
-        }
-
-        // Validate email format
-        const email = emailInput.value;
-        if (!validateEmail(email)) {
-          emailError.textContent = 'Please enter a valid email address';
-          valid = false;
-        } else {
-          emailError.textContent = '';
-        }
-
-        // Validate password (not empty)
-        const password = form.elements['password'].value;
-        if (password.trim() === '') {
-          alert('Password is required');
-          valid = false;
-        }
-
-        if (!valid) {
-          event.preventDefault();
-        }
-      });
-
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
-    });
-  </script>
+    <script src="validationform.js"></script>
 </body>
 </html>
