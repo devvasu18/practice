@@ -28,30 +28,58 @@ if (inputValue.length === 1 && !['6', '7', '8', '9'].includes(inputValue[0])) {
 this.value = inputValue;
 });
 
+//validation consitions 
+function validatefrm() {
+    const name = document.getElementById('name').value.trim();
+    const mobile_no = document.getElementById('mobile_no').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pass = document.getElementById('password').value.trim();
 
-function validatefrm () {
-    const name = document.getElementById('name').value;
-    const mobile_no = document.getElementById('mobile_no').value;
-    const email = document.getElementById('email').value;
-    const pass = document.getElementById('password').value;
+    // Clear previous error messages
+    document.getElementById('name-error').textContent = '';
+    document.getElementById('mobile-error').textContent = '';
+    document.getElementById('email-error').textContent = '';
+    document.getElementById('password-error').textContent = '';
 
-if (name === '') {
-    alert('please enter user name !');
-    return; // return is used bcs to stop further cheking validation if any error capture
-}
-if (mobile_no === '') {
-    alert('please enter user mobile.no !');
-    return; // return is used bcs to stop further cheking validation if any error capture
-} 
-if (email === '') {
-    alert('please enter user email !');
-    return; // return is used bcs to stop further cheking validation if any error capture
-}
-if (pass === '') {
-    alert('please enter user password !');
-    return; // return is used bcs to stop further cheking validation if any error capture
-}
+    let isValid = true;
+    
+    // name
+    if (name === '') {
+        document.getElementById('name-error').textContent = 'Please enter your name!';
+        isValid = false;
+    }else if (name !== ''){
+        document.getElementById('name-error').textContent = 'done';
+    }
 
-form.submit();
+    //mobile no
+    if (mobile_no === '') {
+        document.getElementById('mobile-error').textContent = 'Please enter your mobile number!';
+        isValid = false;
+    } else if (mobile_no.length !== 10) {
+        document.getElementById('mobile-error').textContent = 'Mobile number must be 10 digits!';
+        isValid = false;
+    } else if (mobile_no.length == 10){
+        document.getElementById('mobile-error').textContent = 'done';
+    };
+
+    //email 
+    if (email === '') {
+        document.getElementById('email-error').textContent = 'Please enter your email!';
+        isValid = false;
+    } else if (email !== ''){
+        document.getElementById('email-error').textContent = 'done';
+    }
+
+    //password
+    if (pass === '') {
+        document.getElementById('password-error').textContent = 'Please enter your password!';
+        isValid = false;
+    } else if (pass !== ''){
+        document.getElementById('password-error').textContent ='done';
+    }
+
+    if (isValid) {
+        form.submit();
+    }
 }
 
