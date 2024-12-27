@@ -1,4 +1,42 @@
 
+//logout option in humburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('lgtbtn');
+hamburger.addEventListener('click', () => {
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Get the logout button
+const logoutBtn = document.getElementById('lgtbtn');
+if (localStorage.getItem('userData')) {// Show logout button if user is logged in
+    logoutBtn.style.display = 'block';
+}
+// Add click event listener to the logout button
+const messageContainer = document.getElementById('message'); 
+
+// Show logout button if user is logged in
+if (localStorage.getItem('userData')) {
+    logoutBtn.style.display = 'block';
+}else {
+    logoutBtn.style.display = 'none';
+}
+
+// Add click event listener to the logout button
+logoutBtn.addEventListener('click', function () {
+    messageContainer.textContent = 'You have been logged out!';
+    messageContainer.style.color = 'red';
+    messageContainer.style.fontWeight = 'bold';
+
+    // Use setTimeout to automatically log the user out after 2 seconds
+    setTimeout(function () {
+        localStorage.removeItem('userData');// Remove user data from localStorage
+        window.location.href = "file:///D:/vasu/practice/validationform.html"; // Redirect to login page // Redirect to the login page (or another page)
+    }, 2000); // Wait 2 seconds before logging out
+});
+
+
+
+//products identification
 const products = [
     { id: 1, name: "Smartphone", price: 500, category: "electronics" },
     { id: 2, name: "T-shirt", price: 100, category: "clothing" },
@@ -22,14 +60,14 @@ function renderProducts(filter = "all") {
         const productDiv = document.createElement("div");
         productDiv.className = "product";
         productDiv.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>Price: $${product.price}</p>
-            <div>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
-                <button onclick="incrementQuantity(${product.id})">+</button>
-                <button onclick="decrementQuantity(${product.id})">-</button>
-            </div>
-        `;
+        <h3>${product.name}</h3>
+        <p>Price: $${product.price}</p>
+        <div>
+            <button onclick="addToCart(${product.id})" style="background-color:blue; color : white ;">Add to Cart</button>
+            <button onclick="incrementQuantity(${product.id})" style="background-color: green; color: white;"> + </button>
+            <button onclick="decrementQuantity(${product.id})" style="background-color: red; color: white;"> - </button>
+        </div>
+    `;    
         productContainer.appendChild(productDiv);
     });
 }

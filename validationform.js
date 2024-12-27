@@ -1,7 +1,13 @@
+// Form validation and handling script
+
 const form = document.getElementById('frm');
+const successAlert = document.getElementById('successAlert');
+const errorAlert = document.getElementById('errorAlert');
+
+// Prevent form submission and validate on submit
 form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission if invalid
-    validatefrm();
+    event.preventDefault(); // Prevent default form submission
+    validatefrm(); // Call validation function
 });
 
 // Convert name input to lowercase
@@ -12,14 +18,12 @@ nameInput.addEventListener('input', function () {
 
 // Allow only numbers in mobile input
 const mobileInput = document.getElementById('mobile_no');
-
-// Mobile input validation on input and blur (for paste handling)
 mobileInput.addEventListener('input', function () {
-    let inputValue = this.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    let inputValue = this.value.replace(/[^0-9]/g, '');
     if (inputValue.length === 1 && !['6', '7', '8', '9'].includes(inputValue[0])) {
-        inputValue = ''; // Reset if first digit is invalid
+        inputValue = '';
     } else if (inputValue.length > 10) {
-        inputValue = inputValue.substring(0, 10); // Trim to 10 digits
+        inputValue = inputValue.substring(0, 10);
     }
     this.value = inputValue;
 });
@@ -30,10 +34,8 @@ function validatefrm() {
     const mobile_no = mobileInput.value.trim();
     const email = document.getElementById('email').value.trim();
     const pass = document.getElementById('password').value.trim();
-    const successAlert = document.getElementById('successAlert');
-    const errorAlert = document.getElementById('errorAlert'); // Assuming you have an error alert
 
-    // Clear previous error messages
+    // Clear previous errors
     document.getElementById('name-error').textContent = '';
     document.getElementById('mobile-error').textContent = '';
     document.getElementById('email-error').textContent = '';
@@ -43,7 +45,7 @@ function validatefrm() {
     let invalidCount = 0;
 
     // Name validation
-    if (name === '') {
+    if (!name) {
         document.getElementById('name-error').textContent = 'Please enter your name!';
         isValid = false;
         invalidCount++;
@@ -51,16 +53,13 @@ function validatefrm() {
         document.getElementById('name-error').innerHTML = '&#10003;';
     }
 
-    // Mobile number validation
-    if (mobile_no === '') {
+    // Mobile validation
+    if (!mobile_no) {
         document.getElementById('mobile-error').textContent = 'Please enter your mobile number!';
         isValid = false;
         invalidCount++;
     } else if (mobile_no.length !== 10) {
         document.getElementById('mobile-error').textContent = 'Mobile number must be 10 digits!';
-        isValid = false;
-    } else if (!['6', '7', '8', '9'].includes(mobile_no[0])) {
-        document.getElementById('mobile-error').textContent = 'Mobile number must start with 6, 7, 8, or 9!';
         isValid = false;
         invalidCount++;
     } else {
@@ -69,12 +68,12 @@ function validatefrm() {
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === '') {
+    if (!email) {
         document.getElementById('email-error').textContent = 'Please enter your email!';
         isValid = false;
         invalidCount++;
     } else if (!emailRegex.test(email)) {
-        document.getElementById('email-error').textContent = 'Please enter a valid email!';
+        document.getElementById('email-error').textContent = 'Invalid email format!';
         isValid = false;
         invalidCount++;
     } else {
@@ -83,28 +82,37 @@ function validatefrm() {
 
     // Password validation
     const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (pass === '') {
+    if (!pass) {
         document.getElementById('password-error').textContent = 'Please enter your password!';
         isValid = false;
         invalidCount++;
     } else if (!strongPasswordRegex.test(pass)) {
-        document.getElementById('password-error').textContent = 'Password must be at least 8 characters long, include an uppercase, lowercase, number, and special character!';
+        document.getElementById('password-error').textContent =
+            'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character!';
         isValid = false;
         invalidCount++;
     } else {
         document.getElementById('password-error').innerHTML = '&#10003;';
     }
 
-    // Show success alert only if all validations pass
+
+
+    // Show appropriate alerts
     if (isValid) {
-        successAlert.style.display = 'block'; // Show the alert
-        setTimeout(function () {
-            form.submit(); // Submit the form after 2 seconds
-        }, 2000); // 2 seconds delay
+        // Save to localStorage
+        const userData = { name, mobile_no, email ,password };
+        localStorage.setItem('userData', JSON.stringify(userData));
+
+        successAlert.style.display = 'block';
+        errorAlert.style.display = 'none';
+
+        setTimeout(() => {
+            window.location.href = "e-commerce.html"; // Redirect
+        }, 2000);
     } else {
-        successAlert.style.display = 'none'; 
-        errorAlert.style.display = 'block'; 
-        errorAlert.textContent = `Error! ${invalidCount} field${invalidCount > 1 ? 's' : ''} are invalid. Please try again.`; 
+        successAlert.style.display = 'none';
+        errorAlert.style.display = 'block';
+        errorAlert.textContent = `Error! ${invalidCount} field${invalidCount > 1 ? 's' : ''} are invalid.`;
     }
 }
 
@@ -114,8 +122,18 @@ const passwordInput = document.getElementById('password');
 
 showPasswordCheckbox.addEventListener('change', function () {
     if (this.checked) {
-        passwordInput.type = 'text'; // Show password
+        passwordInput.type = 'text'; 
     } else {
-        passwordInput.type = 'password'; // Hide password
+        passwordInput.type = 'password'; 
     }
 });
+
+// Check if the user is already logged in
+document.addEventListener('DOMContentLoaded', function () {
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+        alert(`Welcome back, ${userData.name}!`);
+        window.location.href = "e-commerce.html"; // Redirect to e-commerce
+    }
+});
+

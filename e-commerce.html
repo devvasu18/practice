@@ -9,11 +9,27 @@
 </head>
 <body>
     <header>
-   <h1>my shop</h1>
-   <div id="cart">
-    <button id="view-cart">view-cart(<span id="cart-count">0</span>)</button>
-   </div>
-    </header>
+        <div class="headerdiv">
+          <div class="divheader">
+            <button class="hamburger" id="hamburger">
+              ☰
+            </button>
+            <ul id="lgtbtn">
+                <li><button>Logout</button></ul></li>  
+                <div id="message"><!--logout successfull msg --> </div>        
+          </div>
+          <div class="divheader">
+            <h1>my shop</h1>
+          </div>
+          <div class="divheader" id="cart">
+            <button id="view-cart">
+              view-cart(<span id="cart-count">0</span>)
+            </button>
+          </div>
+        </div>
+      </header>
+      
+      
     <main>
         <div id="filters">
             <label for="category">category:</label>

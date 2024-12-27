@@ -11,23 +11,223 @@ body {
     color: #333;
 }
 
-/* Header */
-header {
-    background: linear-gradient(90deg, #007bff, #0056b3);
-    color: white;
-    padding: 10px 20px;
+/* Header container */
+/* Header container */
+.headerdiv {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
+    justify-content: space-between; /* Keep space between all items */
+    align-items: center; /* Vertically center items */
+    padding: 10px 20px;
+    background-color: #333; /* Dark background for header */
+    color: #fff; /* White text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  .divheader {
+    display: flex;
+    align-items: center; /* Vertically align content */
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .divheader h1 {
     font-size: 24px;
-    text-transform: uppercase;
-    animation: slideInLeft 1s ease-out;
-}
-
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+    margin-left: 5px; /* Reduced margin between the hamburger and shop name */
+  }
+  
+  /* Hamburger button */
+  .hamburger {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .hamburger:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Cart button */
+  #view-cart {
+    background-color: #f1c40f; /* Gold background */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #view-cart:hover {
+    background-color: #f39c12; /* Darker gold on hover */
+  }
+  
+  #cart-count {
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .headerdiv {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .divheader {
+      width: 100%; /* Full width on smaller screens */
+      margin-bottom: 10px;
+    }
+  
+    .hamburger {
+      margin-bottom: 10px; /* Space between hamburger and header */
+    }
+  
+    #view-cart {
+      margin-top: 10px; /* Add margin top for spacing */
+    }
+  }
+  
+  /* Cart button */
+  #view-cart {
+    background-color: #f1c40f; /* Gold background */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #view-cart:hover {
+    background-color: #f39c12; /* Darker gold on hover */
+  }
+  
+  #cart-count {
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .headerdiv {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .divheader {
+      width: 100%; /* Full width on smaller screens */
+      margin-bottom: 10px;
+    }
+  
+    .hamburger {
+      margin-bottom: 10px; /* Space between hamburger and header */
+    }
+  
+    #view-cart {
+      margin-top: 10px; /* Add margin top for spacing */
+    }
+  }
+  
+  /* Cart button */
+  #view-cart {
+    background-color: #f1c40f; /* Gold background */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #view-cart:hover {
+    background-color: #f39c12; /* Darker gold on hover */
+  }
+  
+  #cart-count {
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .headerdiv {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .divheader {
+      width: 100%; /* Full width on smaller screens */
+      margin-bottom: 10px;
+    }
+  
+    .hamburger {
+      margin-bottom: 10px; /* Space between hamburger and header */
+    }
+  
+    #view-cart {
+      margin-top: 10px; /* Add margin top for spacing */
+    }
+  }
+  
+  /* Cart button */
+  #view-cart {
+    background-color: #f1c40f; /* Gold background */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #view-cart:hover {
+    background-color: #f39c12; /* Darker gold on hover */
+  }
+  
+  #cart-count {
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .headerdiv {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .divheader {
+      width: 100%; /* Full width on smaller screens */
+      margin-bottom: 10px;
+    }
+  
+    .hamburger {
+      margin-bottom: 10px; /* Space between hamburger and header */
+    }
+  
+    #view-cart {
+      margin-top: 10px; /* Add margin top for spacing */
+    }
+  }
+  
 #cart button {
     background-color: #ffd700;
     border: none;
@@ -94,7 +294,7 @@ header h1 {
 }
 
 .product button {
-    background: linear-gradient(90deg, #007bff, #0056b3);
+   
     color: white;
     padding: 10px 15px;
     border: none;
@@ -142,7 +342,7 @@ header h1 {
 
 .modal-content h2 {
     margin-bottom: 20px;
-    color: #007bff;
+    color: #135eaf;
 }
 
 .cart-item {
