@@ -10,9 +10,7 @@
 <body>
   <div class="container mt-5">
     <h1 id="form-title">Sign Up</h1>
-    <div class="d-flex justify-content-end mb-3">
-        <button id="toggle-form-btn" class="btn btn-primary">Switch to Login</button>
-    </div>
+   
     <form id="frm" action="">
         <!-- Name -->
         <div id="name-row" class="row mb-3">
@@ -32,36 +30,46 @@
           </div>
       </div>
       
-        <!-- Email -->
-        <div class="row mb-3">
-          <label for="email" class="col-sm-2 col-form-label">Email:</label>
-          <div class="col-sm-10">
+       <!-- Email -->
+       <div id="email-row" class="row mb-3">
+        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
             <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
             <div id="email-error" class="text-danger small"></div>
-          </div>
         </div>
+    </div>
       
-        <!-- Password -->
-        <div class="row mb-3">
-          <label for="password" class="col-sm-2 col-form-label">Password:</label>
-          <div class="col-sm-10">
+       <!-- Password -->
+       <div class="row mb-3">
+        <label for="password" class="col-sm-2 col-form-label">Password:</label>
+        <div class="col-sm-10">
             <input type="password" id="password" name="password" class="form-control" placeholder="Enter a strong password">
             <div id="password-error" class="text-danger small"></div>
-          </div>
         </div>
+    </div>
+    <!-- Show Password -->
           <input type="checkbox" id="show-password" /> Show Password
-       
- 
-        <button type="submit" class="btn btn-success" id="showAlertBtn">Submit</button>
-        <!--alert for success and error-->
+
+   
+   
+    <!-- Submit Button -->
+        <button type="submit" class="btn btn-success " id="showAlertBtn">Submit</button>
+
+    <!--alert for success and error-->
       <div class="alert alert-success" role="alert" id="successAlert" style="display: none;">
       All fields are valid. ready to Submission successful in 2 sec !
       </div>
+     
       <div class="alert alert-danger" role="alert" id="errorAlert" style="display: none;">
        <!--Error! 4 fields are invalid. Please try again.-->
      </div>
       </form>
+
+       <!--switch to login button -->
+       <div class="stolbox"> <button id="toggle-form-btn" class="btn stol" style="color: red;">Switch to Login</button>      </div>
       
+      <div id="successAlert" style="display:none;"></div>
+       <div id="errorAlert" style="display:none;"></div>
   
     <div class="form-footer">
       <p>All fields are mandatory. Please fill carefully.</p>

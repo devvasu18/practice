@@ -29,13 +29,13 @@ logoutBtn.addEventListener('click', function () {
 
     // Use setTimeout to automatically log the user out after 2 seconds
     setTimeout(function () {
-        localStorage.removeItem('userData');// Remove user data from localStorage
+      //  localStorage.removeItem('userData');// Remove user data from localStorage
         window.location.href = "file:///D:/vasu/practice/validationform.html"; // Redirect to login page // Redirect to the login page (or another page)
-    }, 2000); // Wait 2 seconds before logging out
+    },0); // Wait 2 seconds before logging out
 });
 
 
-
+ "file:///D:/vasu/practice/validationform.html"
 //products identification
 const products = [
     { id: 1, name: "Smartphone", price: 500, category: "electronics" },

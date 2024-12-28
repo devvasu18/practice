@@ -1,39 +1,55 @@
-// Form validation and handling script
-
 const form = document.getElementById('frm');
+const nameRow = document.getElementById('name-row');
+const emailRow = document.getElementById('email-row');
+const formTitle = document.getElementById('form-title');
+const toggleFormBtn = document.getElementById('toggle-form-btn');
 const successAlert = document.getElementById('successAlert');
 const errorAlert = document.getElementById('errorAlert');
+let isSignUp = true; // Toggle state
 
-// Prevent form submission and validate on submit
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent default form submission
-    validatefrm(); // Call validation function
-});
-
-// Convert name input to lowercase
-const nameInput = document.getElementById('name');
-nameInput.addEventListener('input', function () {
-    this.value = this.value.toLowerCase();
-});
-
-// Allow only numbers in mobile input
-const mobileInput = document.getElementById('mobile_no');
-mobileInput.addEventListener('input', function () {
-    let inputValue = this.value.replace(/[^0-9]/g, '');
-    if (inputValue.length === 1 && !['6', '7', '8', '9'].includes(inputValue[0])) {
-        inputValue = '';
-    } else if (inputValue.length > 10) {
-        inputValue = inputValue.substring(0, 10);
+// Toggle between Sign Up and Login
+toggleFormBtn.addEventListener('click', function () {
+    isSignUp = !isSignUp;
+    if (isSignUp) {
+        formTitle.textContent = 'Sign Up';
+        toggleFormBtn.textContent = 'Switch to Login';
+        nameRow.style.display = 'flex';
+        emailRow.style.display = 'flex';
+    } else {
+        formTitle.textContent = 'Login';
+        toggleFormBtn.textContent = 'Switch to Sign Up';
+        nameRow.style.display = 'none';
+        emailRow.style.display = 'none';
     }
-    this.value = inputValue;
+});
+
+// Form submission handling
+form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Skip validation for login
+    if (isSignUp) {
+        // Validate form fields only for sign-up
+        if (validatefrm()) {
+            await handleSignUp(); // Sign-up logic if it's a sign-up form
+        } else {
+            errorAlert.style.display = 'block';
+            errorAlert.textContent = 'Error! Some input fields are invalid.';
+        }
+    } else {
+        // Proceed with login logic
+        await handleLogin(); // Login logic if it's a login form
+    }
 });
 
 // Validate form fields
 function validatefrm() {
-    const name = nameInput.value.trim();
-    const mobile_no = mobileInput.value.trim();
+    const name = document.getElementById('name').value.trim();
+    const mobile_no = document.getElementById('mobile_no').value.trim();
     const email = document.getElementById('email').value.trim();
     const pass = document.getElementById('password').value.trim();
+
+    let isValid = true;
 
     // Clear previous errors
     document.getElementById('name-error').textContent = '';
@@ -41,29 +57,19 @@ function validatefrm() {
     document.getElementById('email-error').textContent = '';
     document.getElementById('password-error').textContent = '';
 
-    let isValid = true;
-    let invalidCount = 0;
-
     // Name validation
     if (!name) {
         document.getElementById('name-error').textContent = 'Please enter your name!';
         isValid = false;
-        invalidCount++;
-    } else {
-        document.getElementById('name-error').innerHTML = '&#10003;';
     }
 
     // Mobile validation
     if (!mobile_no) {
         document.getElementById('mobile-error').textContent = 'Please enter your mobile number!';
         isValid = false;
-        invalidCount++;
     } else if (mobile_no.length !== 10) {
         document.getElementById('mobile-error').textContent = 'Mobile number must be 10 digits!';
         isValid = false;
-        invalidCount++;
-    } else {
-        document.getElementById('mobile-error').innerHTML = '&#10003;';
     }
 
     // Email validation
@@ -71,13 +77,9 @@ function validatefrm() {
     if (!email) {
         document.getElementById('email-error').textContent = 'Please enter your email!';
         isValid = false;
-        invalidCount++;
     } else if (!emailRegex.test(email)) {
         document.getElementById('email-error').textContent = 'Invalid email format!';
         isValid = false;
-        invalidCount++;
-    } else {
-        document.getElementById('email-error').innerHTML = '&#10003;';
     }
 
     // Password validation
@@ -85,35 +87,75 @@ function validatefrm() {
     if (!pass) {
         document.getElementById('password-error').textContent = 'Please enter your password!';
         isValid = false;
-        invalidCount++;
     } else if (!strongPasswordRegex.test(pass)) {
         document.getElementById('password-error').textContent =
             'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character!';
         isValid = false;
-        invalidCount++;
-    } else {
-        document.getElementById('password-error').innerHTML = '&#10003;';
     }
 
+    return isValid;
+}
+
+// Sign Up Logic
+async function handleSignUp() {
+    const name = document.getElementById('name').value.trim();
+    const mobile_no = document.getElementById('mobile_no').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const hashedPassword = await hashPassword(password); // Hash the password
+    const userData = { name, mobile_no, email, password: hashedPassword }; // Store hashed password
+    localStorage.setItem(mobile_no, JSON.stringify(userData)); // Save to localStorage
+
+    successAlert.textContent = 'Sign Up successful!';
+    successAlert.style.display = 'block';
+    errorAlert.style.display = 'none';
+    setTimeout(() => location.reload(), 2000); // Reload the form
 
 
-    // Show appropriate alerts
-    if (isValid) {
-        // Save to localStorage
-        const userData = { name, mobile_no, email ,password };
-        localStorage.setItem('userData', JSON.stringify(userData));
+if (successAlert) {window.location.href = "file:///D:/vasu/practice/e-commerce.html";}
+}
 
-        successAlert.style.display = 'block';
-        errorAlert.style.display = 'none';
+// Login Logic
+async function handleLogin() {
+    const mobile_no = document.getElementById('mobile_no').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-        setTimeout(() => {
-            window.location.href = "e-commerce.html"; // Redirect
-        }, 2000);
+    if (mobile_no && password) {
+        const userData = JSON.parse(localStorage.getItem(mobile_no)); // Retrieve user data by mobile_no key
+
+        if (userData) {
+            const hashedInputPassword = await hashPassword(password); // Hash the input password
+            if (userData.password === hashedInputPassword) {
+                successAlert.textContent = 'Login successful!';
+                successAlert.style.display = 'block';
+                errorAlert.style.display = 'none';
+                    window.location.href = "file:///D:/vasu/practice/e-commerce.html"; // Redirect
+            } else {
+                errorAlert.textContent = 'Incorrect password.';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+            }
+        } else {
+            errorAlert.textContent = 'User not found.';
+            errorAlert.style.display = 'block';
+            successAlert.style.display = 'none';
+        }
     } else {
-        successAlert.style.display = 'none';
+        errorAlert.textContent = 'Please fill in all fields.';
         errorAlert.style.display = 'block';
-        errorAlert.textContent = `Error! ${invalidCount} field${invalidCount > 1 ? 's' : ''} are invalid.`;
+        successAlert.style.display = 'none';
     }
+  
+}
+
+// Password hashing
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
 // Toggle show/hide password
@@ -127,13 +169,3 @@ showPasswordCheckbox.addEventListener('change', function () {
         passwordInput.type = 'password'; 
     }
 });
-
-// Check if the user is already logged in
-document.addEventListener('DOMContentLoaded', function () {
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    if (userData) {
-        alert(`Welcome back, ${userData.name}!`);
-        window.location.href = "e-commerce.html"; // Redirect to e-commerce
-    }
-});
-
