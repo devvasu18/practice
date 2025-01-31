@@ -1,0 +1,56 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  /* Slideshow Container */
+  .slideshow-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  /* Slides (images) */
+  .slide {
+    display: none; /* Hide all slides initially */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Navigation Arrows */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
