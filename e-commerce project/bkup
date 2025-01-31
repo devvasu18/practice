@@ -146,15 +146,3 @@
       margin: 5px 0;
   }
 }
-
-
-// Redirect to account page
-const loginSignupBtn = document.getElementById('login-signup-btn');
-loginSignupBtn.addEventListener('click', () => {
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    if (userData) {
-    //    window.location.href = "file:///D:/vasu/e-commerce%20project/ecommerce/account.html"; // Redirect to account page
-    } else {
-       // window.location.href = "file:///D:/vasu/e-commerce%20project/validationfrm/validationform.html"; // Redirect to login page
-    }
-});
