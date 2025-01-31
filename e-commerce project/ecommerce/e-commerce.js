@@ -1,4 +1,5 @@
 
+
 //logout option in humburger menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('lgtbtn');
@@ -261,4 +262,8 @@ document.getElementById("view-cart").addEventListener("click", showCart);
 // Load cart on page load
 window.onload = loadCartFromLocalStorage;
 
+
+document.getElementById("actlist").addEventListener("click", function () {
+    window.location.href = "file:///D:/vasu/e-commerce%20project/ecommerce/account.html";
+});
 

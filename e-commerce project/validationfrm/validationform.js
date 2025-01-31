@@ -123,11 +123,8 @@ async function handleSignUp() {
     setTimeout(() => location.reload(), 2000); // Reload the form
     
    
-<<<<<<< HEAD
-if (successAlert) {window.location.href = "file:///D:/vasu/practice/e-commerce%20project/ecommerce/e-commerce.html";}
-=======
 if (successAlert) {window.location.href = "file:///D:/vasu/e-commerce%20project/ecommerce/e-commerce.html";}
->>>>>>> 386f0e8 (updating the code)
+
 }
 
 // Login Logic
@@ -144,11 +141,10 @@ async function handleLogin() {
                 successAlert.textContent = 'Login successful!';
                 successAlert.style.display = 'block';
                 errorAlert.style.display = 'none';
-<<<<<<< HEAD
-                    window.location.href = "file:///D:/vasu/practice/e-commerce%20project/ecommerce/e-commerce.html"; // Redirect
-=======
+                
+
+                localStorage.setItem('loggedInUser', mobile_no); // Store logged-in user info
                     window.location.href = "file:///D:/vasu/e-commerce%20project/ecommerce/e-commerce.html"; // Redirect
->>>>>>> 386f0e8 (updating the code)
             } else {
                 errorAlert.textContent = 'Incorrect password.';
                 errorAlert.style.display = 'block';
@@ -187,3 +183,5 @@ showPasswordCheckbox.addEventListener('change', function () {
         passwordInput.type = 'password'; 
     }
 });
+
+////
