@@ -231,3 +231,5 @@ document.getElementById("view-cart").addEventListener("click", showCart);
 
 // Load cart on page load
 window.onload = loadCartFromLocalStorage;
+
+

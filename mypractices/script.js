@@ -8,6 +8,7 @@ const products = [
 
 // Function to Display Products
 function displayProducts(productList, containerId) {
+    
     const container = document.getElementById(containerId);
     container.innerHTML = ""; // Clear previous list
     productList.forEach(product => {
@@ -38,3 +39,7 @@ document.getElementById("apply-discount").addEventListener("click", () => {
     // Display Discounted Products
     displayProducts(discountedProducts, "discounted-products");
 });
+
+
+
+
