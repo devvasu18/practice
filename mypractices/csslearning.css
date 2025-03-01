@@ -1,0 +1,37 @@
+/* diffrent way to show container flox */
+
+/*CSS Grid (Best for Complex Layouts)*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Space between items */
+  }
+  
+  .item {
+    background: lightblue;
+    padding: 20px;
+    text-align: center;
+  }
+
+/*  Inline-Block (Better than Float, But Limited)*/
+.item {
+    display: inline-block;
+    width: 30%;
+    background: lightblue;
+    text-align: center;
+  }
+
+
+/*Table Layout (For Tabular Data)*/
+.container {
+    display: table;
+    width: 100%;
+  }
+  
+  .item {
+    display: table-cell;
+    background: lightblue;
+    text-align: center;
+  }
+
+  

@@ -1,0 +1,67 @@
+/* General Styles for the Testimonials Section */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .testimonials {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .testimonials h2 {
+    margin: 0;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+  }
+  
+  .testimonial-card {
+    min-width: 300px; /* Minimum width of each card */
+    margin: 0 15px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-card h3 {
+    text-align: right;
+    margin: 0;
+    color: #555;
+  }
+  
+  .testimonial-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .testimonial-nav button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+  
+  .testimonial-nav button:hover {
+    background-color: #0056b3;
+  }
+  

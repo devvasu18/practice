@@ -1,0 +1,320 @@
+/*
+🔹1 What is JavaScript, and how is it different from other programming languages?
+= javascript is a synchronous ,single thread language,by javascript we can make atractive web pages 
+
+🔹2 What are data types in JavaScript? Can you name a few?
+=✔ Primitive Types: string, number, boolean, null, undefined, bigint, symbol
+✔ Reference Types (Objects): Object, Array, Function
+
+🔹3 What is the difference between function declaration and function expression?
+=function declaration is also known as function statement ,
+
+function statement =>
+function greet() {
+  console.log("Hello");
+}
+
+function expression =>
+const greet = function() {
+  console.log("Hello");
+};
+
+(the major diffrance is that funtion statement can be hoisted and funtion expression can not be hoisted )
+
+🔹4 What is a callback function? Can you give an example?
+= some function  are first class citizens that means you can take a funtion and pass into another function 
+
+eg:-  function greet (name,callback){
+    console.log("hello"+name);
+    callback();
+}
+  function saybye() {
+    console.log("goodbye!");
+  }
+
+  greet("vasu",saybye);
+
+🔹5 Explain lexical scope and closure in JavaScript.
+= lexical scope => A function can access variables from its own scope and outer (parent) scopes.
+It cannot access child function variables.
+eg=
+function outer() {
+  let x = 10;
+  function inner() {
+    console.log(x); // Can access x from outer
+  }
+  inner();
+}
+outer();
+
+
+closure => Closure occurs when a function remembers variables from its outer scope even after execution.
+eg= 
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+const add = counter();
+add(); // 1
+add(); // 2
+
+
+🔹6 How do you select an element in JavaScript? Name a few methods.
+= ✔ document.getElementById("id")
+✔ document.getElementsByClassName("class")
+✔ document.getElementsByTagName("tag")
+✔ document.querySelector("selector") (Best method)
+
+🔹7 How can you change the text inside an HTML element using JavaScript?
+= document.getElementById("demo").innerText="new text";
+                       "or"
+  document.getElementById("demo").innerHTML="new text";
+
+🔹8 What is event delegation, and why is it useful?
+= event delegation mean adding event listener to parent element instead of adding to each child element 
+  it is useful because it reduce the number of event listener and also it is more efficient
+   suppose you have 1000 of child element and you want to add a event like if you click on any child then print child element is clicked in this case you will attach the event handler on parent not in all child element
+  
+ Using event.target: The event object (event.target) helps identify which child element triggered the event.
+
+
+🔹9 What is the difference between synchronous and asynchronous JavaScript?
+= Synchronous: Blocks execution
+ Asynchronous: Non-blocking, allows execution to continue
+
+ console.log("Start");
+setTimeout(() => console.log("Delayed"), 2000);
+console.log("End");
+
+🔹10 How do Promises work in JavaScript? Can you write a simple example?
+= Promises are used to handle asynchronous operations in JavaScript.
+A Promise has 3 states: pending, fulfilled, rejected.
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success"), 2000);
+});
+promise.then((message) => console.log(message));
+
+🔹11 What is async/await, and how does it improve working with asynchronous code?
+= async/await is a modern way of handling asynchronous operations in JavaScript.
+It makes code look synchronous and easier to read.
+ 
+async function fetchData() {
+  let response = await fetch("https://api.example.com");
+  let data = await response.json();
+  console.log(data);
+}
+
+🔹12 What is the difference between primitive and reference data types?
+✔ Primitive: Stored in stack, copied by value (string, number, etc.)
+✔ Reference: Stored in heap, copied by reference (object, array)
+
+🔹13 What is prototypal inheritance in JavaScript?
+= In JavaScript, objects can inherit properties and methods from other objects.
+eg =>
+  let person = { greet() { console.log("Hello!"); } };
+let student = Object.create(person);
+student.greet(); // "Hello!"
+
+🔹14 What is the difference between == and === in JavaScript?
+=>   == compares only values
+     === compares values and types
+
+🔹15 What is the constructor ?
+= constructor is a special method for creating and initializing an object created within a class.
+ 
+🔹16 why class is created in javascript what are the uses of class?
+= class is created to create a blueprint for creating objects with specific properties and methods.
+  (class is same as any form formate )
+
+
+🔹17 What are template literals, and how are they different from regular strings?
+= Template literals are string literals that allow embedded expressions.
+  They are enclosed by backticks (`) instead of quotes (' or ").
+
+let name = "Vasu";
+console.log(`Hello, ${name}`); // Template literals use backticks (``)
+
+🔹18 What are arrow functions, and how do they differ from normal functions?
+const greet = (name) => console.log(`Hello, ${name}`);
+greet("Vasu");
+
+🔹19 what is destructuring is javascript
+= Destructuring is a way to extract values from objects and arrays into variables.
+eg =>
+let person = { name: "Vasu", age: 25 };
+let { name, age } = person;
+console.log(name, age);
+ 
+
+🔹20 What is the purpose of try...catch in JavaScript?
+= To handle errors without stopping execution.
+try {
+  let result = someUndefinedFunction();
+} catch (error) {
+  console.log("Error occurred:", error);
+}
+
+🔹21 What is an Immediately Invoked Function Expression (IIFE)?
+= Avoid polluting the global scope (Encapsulation).
+Execute code immediately (Useful for initialization).
+Create a private scope (Variables inside an IIFE are not accessible outside).
+
+(function(name) {
+    console.log("Hello, " + name);
+})("Vasu");
+ 
+Hello, Vasu
+
+🔹22 Explain the call(), apply(), and bind() methods in JavaScript.
+
+The call() method immediately invokes the function with a specified this value and individual arguments.
+function greet(message) {
+    console.log(`${message}, ${this.name}`);
+}
+
+const user = { name: "Vasu" };
+
+greet.call(user, "Hello"); 
+
+Hello, Vasu
+
+
+The apply() method is similar to call(), but it takes arguments as an array.
+function greet(message, emoji) {
+    console.log(`${message}, ${this.name} ${emoji}`);
+}
+
+const user = { name: "Vasu" };
+
+greet.apply(user, ["Hi", "😊"]);
+
+Hi, Vasu 😊
+
+
+
+The bind() method does not invoke the function immediately. Instead, it returns a new function with this permanently bound.
+function greet(message) {
+    console.log(`${message}, ${this.name}`);
+}
+
+const user = { name: "Vasu" };
+
+const newFunc = greet.bind(user, "Hey");
+newFunc(); 
+
+Hey, Vasu
+
+
+
+🔹23 What is the difference between map(), filter(), and reduce()?
+=  map () Used for: Transforming each element in an array
+ Returns a new array with the modified elements
+ Does NOT change the original array
+ 
+ const numbers = [1, 2, 3, 4];
+
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); 
+// Output: [2, 4, 6, 8]
+
+ filter Used for: Filtering elements based on a condition
+ Returns a new array with only the elements that satisfy the condition
+ Does NOT change the original array
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); 
+// Output: [2, 4, 6]
+
+  reduce is used for: Accumulating values into a single result
+ Returns a single value (number, object, array, etc.)
+ Takes a callback function with an accumulator
+ const numbers = [1, 2, 3, 4];
+
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); 
+// Output: 10
+
+
+
+🔹24 What are JavaScript modules, and how do you import/export them? 
+=JavaScript modules allow you to split your code into separate files to improve maintainability and reusability.
+Modules are imported and exported using the import and export keywords.
+
+
+You can export functions, variables, or classes from a module using:
+ Named Exports
+ Default Exports
+
+Named Export (Multiple Exports Allowed)
+// file: mathUtils.js
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+
+Default Export (Only One Export Allowed)
+// file: calculator.js
+export default function multiply(a, b) {
+    return a * b;
+}
+
+
+Importing Named Exports
+// file: main.js
+import { add, subtract } from './mathUtils.js';
+
+console.log(add(5, 3));       // Output: 8
+console.log(subtract(5, 3));  // Output: 2
+
+
+Renaming Named Imports
+import { add as sum } from './mathUtils.js';
+console.log(sum(5, 3)); // Output: 8
+
+
+Importing a Default Export
+// file: main.js
+import multiply from './calculator.js';
+
+console.log(multiply(4, 2)); // Output: 8
+
+
+
+Import Everything from a Module
+// file: main.js
+import * as MathUtils from './mathUtils.js';
+
+console.log(MathUtils.add(5, 3));       // Output: 8
+console.log(MathUtils.subtract(5, 3));  // Output: 2
+
+
+🔹25What is the Event Loop in JavaScript, and how does it work?
+=Event Loop – Moves tasks from queues to the Call Stack when it's empty.
+Call Stack – Executes tasks in a single-threaded manner.
+
+how code works in javascript 
+1JavaScript starts executing code in the Call Stack (synchronous code first).
+2️ Asynchronous tasks (like setTimeout, fetch) are sent to Web APIs.
+3️ When an async task is completed, its callback moves to either:
+* Microtask Queue (for Promises, MutationObserver).
+* Callback Queue (for setTimeout, setInterval, I/O).
+4️ The Event Loop checks if the Call Stack is empty:
+✅ If yes, it pushes the first task from the Microtask Queue.
+✅ If the Microtask Queue is empty, it moves tasks from the Callback
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
