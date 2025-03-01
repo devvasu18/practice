@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   margin-top: 100px;
+}
+.login-container {
+    background-color:rgb(250, 250, 250);
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 310px;
+    margin-bottom: 10px;
+}
+.login-container h1 {
+    background-position: 0px 0px;
+    background-size: 176px 492px;
+    width: 175px;
+    height: 51px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-image: url(insta\ hading\ logo.png);
+   /* background-image: url(https://static.cdninstagram.com/rsrc.php/v4/yO/r/81fXxo65t4C.png);*/
+    margin-bottom: 30px;
+}
+.input-field {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin: 4px ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+input::placeholder {
+    font-size: 12px; /* Change font size */
+    font-weight:normal; /* Make it bold */
+    
+  }
+.login-btn {
+    width: 87%;
+    height: 35px;
+    padding: 10px;
+    background-color: #0094f6a9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.or {
+    margin: 15px 0;
+    font-size: small;
+    font-weight: bold;
+    color: #777;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 15px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #999;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.separator .line {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 10px;
+}
+
+.fa-facebook {
+    color: #1877F2; /* Facebook blue */
+    font-size: 22px;
+    text-underline-offset: 0;
+}
+.fb-btn {
+    background: none;
+    border: none;
+    color: #1877F2;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+.forgot-pwd {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00376b;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+.signup-container {
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 350px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 4
+    0px;
+}
+.signup-link a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+.x1vqgdyp{
+    height: 40px;
+}
+.app {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.app-icons img {
+    width: 120px;
+    margin: 5px;
+}
+.ftrlnk:hover{
+    text-decoration: underline;
+}
+footer {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer ul li {
+    display: inline;
+    margin: 5px;
+}
+footer ul li a {
+    text-decoration: none;
+    color: #777;
+}
+.endftr{
+    margin-bottom: 70px;
+}
