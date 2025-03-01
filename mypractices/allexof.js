@@ -19,7 +19,7 @@
         </div>
       </header>*/
       
-
+    
 // JavaScript is a lightweight, interpreted programming language primarily used for web development.
 // It allows you to make web pages interactive (e.g., handle user actions, update DOM elements).
 
