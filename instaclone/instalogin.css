@@ -24,7 +24,6 @@ body {
     background-repeat: no-repeat;
     display: inline-block;
     background-image: url(insta\ hading\ logo.png);
-   /* background-image: url(https://static.cdninstagram.com/rsrc.php/v4/yO/r/81fXxo65t4C.png);*/
     margin-bottom: 30px;
 }
 .input-field {
@@ -45,7 +44,7 @@ input::placeholder {
     width: 87%;
     height: 35px;
     padding: 10px;
-    background-color: #0094f6a9;
+    background-color: #0094f6d7;
     color: white;
     border: none;
     border-radius: 8px;

@@ -63,12 +63,13 @@ loginSignupBtn.addEventListener('click', () => {
     }
 });
 //products identification
+// images will only displayed when the vs code live server is running. bcs images url link is copied from live server.
 const products = [
-    { id: 1, name: "Smartphone", price: 500, category: "electronics", image: "D:/vasu/e-commerce project/project images/d58dde04-041b-4ff5-adda-de71e7d552c1.webp" },
-    { id: 2, name: "T-shirt", price: 100, category: "clothing", image: "D:/vasu/e-commerce project/project images/ceaa3a8d-ed56-4fa7-8157-2f8b1188abf4.webp" },
-    { id: 3, name: "Laptop", price: 1200, category: "electronics", image: " D:/vasu/e-commerce project/project images/6019c862-8f9c-470a-9cdd-6ddf96374ba5.webp" },
-    { id: 4, name: "Book", price: 80, category: "books", image: "D:/vasu/e-commerce project/project images/c6706689-417a-4114-ada8-f962375b3aee.webp" },
-    { id: 5, name: "Headphones", price: 150, category: "electronics", image: "D:/vasu/e-commerce project/project images/23b25ca8-deeb-4e23-aac0-e38eb45e1315.webp" },
+    { id: 1, name: "Smartphone", price: 500, category: "electronics", image: "http://127.0.0.1:5500/e-commerce%20project/project%20images/d58dde04-041b-4ff5-adda-de71e7d552c1.webp" },
+    { id: 2, name: "T-shirt", price: 100, category: "clothing", image: "http://127.0.0.1:5500/e-commerce%20project/project%20images/ceaa3a8d-ed56-4fa7-8157-2f8b1188abf4.webp" },
+    { id: 3, name: "Laptop", price: 1200, category: "electronics", image: "http://127.0.0.1:5500/e-commerce%20project/project%20images/6019c862-8f9c-470a-9cdd-6ddf96374ba5.webp" },
+    { id: 4, name: "Book", price: 80, category: "books", image: "http://127.0.0.1:5500/e-commerce%20project/project%20images/c6706689-417a-4114-ada8-f962375b3aee.webp" },
+    { id: 5, name: "Headphones", price: 150, category: "electronics", image: "http://127.0.0.1:5500/e-commerce%20project/project%20images/23b25ca8-deeb-4e23-aac0-e38eb45e1315.webp" },
 ];
 
 

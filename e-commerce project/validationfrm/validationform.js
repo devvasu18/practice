@@ -140,7 +140,7 @@ async function handleLogin() {
                 successAlert.textContent = 'Login successful!';
                 successAlert.style.display = 'block';
                 errorAlert.style.display = 'none';
-                    window.location.href = "file:///D:/vasu/e-commerce%20project/ecommerce/e-commerce.html#"; // Redirect
+                    window.location.href = "http://127.0.0.1:5500/e-commerce%20project/ecommerce/e-commerce.html"; // Redirect
             } else {
                 errorAlert.textContent = 'Incorrect password.';
                 errorAlert.style.display = 'block';

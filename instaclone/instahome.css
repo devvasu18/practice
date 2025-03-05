@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    margin: 20px;
+    background: white(207, 32, 32);
+    margin-right: 5px; /* Adds space between the icon and text */
+    vertical-align: middle; /* Aligns the icon properly */
+    border-right: 1px solid #dbdbdb;
+}
+.container h1 {
+    background-position: 0px 0px;
+    background-size: 110px 352px;
+    width: 175px;
+    height: 37px;
+    background-repeat: no-repeat;
+    display: inline-block;
+   /* background-image: url(insta\ hading\ logo.png);*/
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.sidebar nav a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+.sidebar svg {
+    margin-bottom: -3px;
+}
+.sidebariconname {
+   margin-left: 13px;
+}
+
+  .profile-icon{
+    width: 40px; /* Adjust size */
+    height: 40px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Proper scaling */
+    margin-left: -5px;
+  }
+
+.feed {
+    width: 50%;
+    padding: 20px;
+    margin-left: 60px;
+}
+
+.stories {
+    margin-left: -50px;
+    display: flex;
+    gap: 10px; /* Adjust spacing between stories */
+}
+
+.story {
+    width: 63px; /* Slightly larger than the image */
+    height: 62px;
+    border-radius: 55%;
+    background-color: red; /* Outer red border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.story img {
+    width: 60px; /* Adjust size */
+    height: 60px; /* Make sure width and height are the same */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area properly */
+    border: 2px solid #ddd; /* Optional: Adds a border */
+   
+} .posts {
+    display: flex;
+    justify-content: center; /* Centers the posts */
+    margin-top: 20px;
+}
+
+.post {
+    width: 50px; /* Adjust width like Instagram */
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+   
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+.post-header h7{
+    margin-right: 210px;
+}
+.profile-pic {
+    width: 30px; /* Adjust size */
+    height: 30px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Proper scaling */
+    margin-left: -150px;
+  }
+
+.profilecls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu {margin-right: -290px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.post-image {
+    width: 500px;
+    height: 550px; /* Makes it like a reel */
+    object-fit: cover; /* Ensures full image coverage */
+    border-radius: 5px;
+    margin-left: -150px;
+}
+
+.post-actions {
+    margin-left: -140px;
+    display: flex;
+    gap: 15px;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.likes {
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+
+.right-sidebar {
+    margin-left: 100px;
+    margin-right: 50px;
+    width: 30%;
+    padding: 20px;
+    background: white;
+
+}@media (max-width: 750px) {
+    .sidebar {
+        display: none;
+    }
+
+    .bottom-nav {
+        display: flex; /* Show bottom nav on small screens */
+    }
+
+    .bottom-nav a svg {
+        margin-bottom: -3px; /* Adjusts the icon */
+        margin-right: -30px; /* Adjusts the icon */
+    }
+}
+
+@media (min-width: 751px) {
+    .bottom-nav {
+        display: none !important; /* Force hide bottom nav */
+    }
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.like-btn {
+    font-size: 30px;
+    color: black; /* Default color */
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.liked {
+    color: red; /* Filled color when liked */
+}
