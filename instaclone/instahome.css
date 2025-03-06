@@ -12,12 +12,14 @@ body {
 }
 
 .container {
-    display: flex;
     width: 100%;
+    display: flex;
+    
 }
 
 .sidebar {
-    width: 20%;
+    position: fixed;
+    width: 15%;
     margin: 20px;
     background: white(207, 32, 32);
     margin-right: 5px; /* Adds space between the icon and text */
@@ -59,17 +61,25 @@ body {
   }
 
 .feed {
-    width: 50%;
+    width: 40%;
     padding: 20px;
-    margin-left: 60px;
 }
 
 .stories {
-    margin-left: -50px;
+    width: 650px; /* Adjust width */
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+    gap: 10px;
+    padding: 10px;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    margin-left: 250px;
     display: flex;
     gap: 10px; /* Adjust spacing between stories */
 }
-
+.stories::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari */
+}
 .story {
     width: 63px; /* Slightly larger than the image */
     height: 62px;
@@ -90,6 +100,7 @@ body {
     display: flex;
     justify-content: center; /* Centers the posts */
     margin-top: 20px;
+    margin-left: 50px;
 }
 
 .post {
@@ -106,15 +117,22 @@ body {
     justify-content: space-between;
     padding: 5px 10px;
 }
+.profile-pic {
+    width: 40px; /* Adjust size */
+    height: 30px;
+    border-radius: 59%; /* Circular shape */
+    object-fit: cover; /* Proper scaling */
+    
+  }
 .post-header h7{
-    margin-right: 210px;
+    margin-left: 10px;
 }
 .profile-pic {
-    width: 30px; /* Adjust size */
-    height: 30px;
-    border-radius: 50%; /* Circular shape */
+    width: 40px; /* Adjust size */
+    height: 40px;
+    border-radius: 59%; /* Circular shape */
     object-fit: cover; /* Proper scaling */
-    margin-left: -150px;
+    margin-left: 80px;
   }
 
 .profilecls{
@@ -122,22 +140,33 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.menu {margin-right: -290px;
+.menu {margin-left:300px;
     font-size: 20px;
     cursor: pointer;
     font-weight: bold;
 }
 
 .post-image {
-    width: 500px;
+    margin-left: 60px;
+    margin-right: 30px;
+    width: 550px;
     height: 550px; /* Makes it like a reel */
     object-fit: cover; /* Ensures full image coverage */
-    border-radius: 5px;
-    margin-left: -150px;
+    border-radius: 5px;   
+}
+.post video {
+    width: 700px;  /* Set the width */
+    max-width: 550px; /* Ensure responsiveness */
+    border-radius: 10px;
+    max-height: 800px;
+    object-fit: cover;
+    margin-left: 60px;
 }
 
+
+
 .post-actions {
-    margin-left: -140px;
+    margin-left: 40px;
     display: flex;
     gap: 15px;
     font-size: 22px;
@@ -145,22 +174,86 @@ body {
 }
 
 .likes {
-    padding: 5px 10px;
+    padding: 5px 20px;
     font-weight: bold;
+}
+#likeCount {
+    font-size: medium;
+    margin-left: -10px;
+    margin-top: 10px;
 }
 
 
 .right-sidebar {
-    margin-left: 100px;
-    margin-right: 50px;
-    width: 30%;
+    margin-left: 480px;
+    width: 20%;
     padding: 20px;
     background: white;
+    
+}
+.sgstnprofile{  width: 30px; /* Adjust size */
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Proper scaling */
+margin-top: 10px;}
+    
+.rsh7{margin-left: 40px;
+    margin-top: -50px;
+}
+.sgt4u{margin-top: 20px;
+    font-weight: 100;
+    color: grey;
+}
+.person1sgst, .person2sgst, .person3sgst, .person4sgst {
+    margin-left: 40px;
+    gap: 30px;
+    margin-top: -50px;
+}
 
-}@media (max-width: 750px) {
+@media (max-width: 750px) {
     .sidebar {
         display: none;
     }
+    .right-sidebar{
+        display: none;
+    }
+    .posts{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+   .post{
+         margin-left: 0px;
+   }
+   .post-image {
+    margin-left: -40px;
+    margin-right: 0px;
+    width: 400px;
+    height: 500px; /* Makes it like a reel */
+    object-fit: cover; /* Ensures full image coverage */
+    border-radius: 5px;
+    }
+    .post video {
+        margin-left: -40px;
+    margin-right: 0px;
+    width: 400px;
+    height: 500px; /* Makes it like a reel */
+    object-fit: cover; /* Ensures full image coverage */
+    border-radius: 5px;
+    }
+    .profile-pic {
+        margin-left: -20px;
+    }
+    .menu {
+        margin-left: 150px;
+    }
+    .post-actions {
+        margin-left: -40px;
+    }
+   .stories {
+    width: 450px; /* Adjust width */
+    margin-left: 0px;
+   }
 
     .bottom-nav {
         display: flex; /* Show bottom nav on small screens */
@@ -208,6 +301,7 @@ nav a {
     background: none;
     outline: none;
     transition: color 0.3s ease-in-out;
+    margin-left: 20px;
 }
 
 .liked {

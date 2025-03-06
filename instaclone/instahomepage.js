@@ -13,23 +13,28 @@ if (userProfilePic && userProfilePic.trim() !== "") {
 }
 
 
-function toggleLike() {
-    let heartBtn = document.getElementById("heartBtn");
-    let likeCountElement = document.getElementById("likeCount");
-    let currentLikes = parseInt(likeCountElement.innerText); // Get current like count
+document.querySelectorAll(".like-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        let likeCountSpan = this.nextElementSibling; // Get the like count span
+        let currentCount = parseInt(likeCountSpan.textContent);
 
-    if (heartBtn.classList.contains("liked")) {
-        heartBtn.classList.remove("liked");
-        heartBtn.innerHTML = "&#9825;"; // Outline heart (♡)
-        likeCountElement.innerText = currentLikes - 1; // Decrease like count
-    } else {
-        heartBtn.classList.add("liked");
-        heartBtn.innerHTML = "&#10084;"; // Filled heart (♥)
-        likeCountElement.innerText = currentLikes + 1; // Increase like count
-    }
-}
+        if (this.classList.contains("liked")) {
+            this.classList.remove("liked");
+            this.innerHTML = "&#9825;"; // Outline heart (♡)
+            likeCountSpan.innerText = currentCount - 1; // Decrease like count
+        } else {
+            this.classList.add("liked");
+            this.innerHTML = "&#10084;"; // Filled heart (♥)
+            likeCountSpan.innerText = currentCount + 1; // Increase like count
+        }
+    });
+});
 
 // Function to handle double-click on the image
 document.querySelector(".post-image").addEventListener("dblclick", function() {
     toggleLike(); // Call the toggleLike function on double-click
 });
+
+
+//heartBtn.innerHTML = "&#9825;"
+ //heartBtn.innerHTML = "&#10084;"
