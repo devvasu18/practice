@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login &middot;  Instagram</title>
-    <link rel="stylesheet" href="instalogin.css">
+    <title>Sign up &middot;  Instagram</title>
+    <link rel="stylesheet" href="instasignup.css">
     <link rel="icon" href="isnta logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="signup-container">
         <h1 class="isntah1"></h1>
-        <input type="text" id="username" class="input-field" placeholder="Phone number, username, or email">
-        <input type="password" id="password" class="input-field" placeholder="Password">
-        <button class="login-btn">Log in</button>
+        <h4 class="signup-h4">Sign up to see photos and videos from your friends.</h4>
+        <button class="fb-btn">  <i class="fab fa-facebook-square fa-1x"></i> Log in with Facebook</button>
         <div class="separator">
             <div class="line"></div>
             <span class="or">OR</span>
             <div class="line"></div>
         </div>
-        <button class="fb-btn"> <i class="fa-brands fa-facebook"></i> <a class="fb-btn" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Foidc%2F%3Fapp_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignupviafb%252F%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bprofile%2Blinking%26state%3DATDApmXRgJ10kzrK-DV3qIHH6MmyT1wpxrncniXldvj-gjkNENPh2gyQonK-7K9x1ImzZx3r9Vp3mrGltLqAUUUVLCqsQ8r8mYwajwNuUQAsTsofZuaVFedPdYEj8gwQTr0UeFBy_6tyQ9tRD309f0HCXl89uWEkhINT8Mf_5NBdSPZlhrpumKUJJHS0hg4JRhBeyp-6Z8SubCD22PwSNuiGWqRm4WvhBNnSIvypswrSKNSH4MYxC9nWR3ckBdV6TGkN7dpz7QU8PSTz9Rrwm1aTFNwfRHFqyFxyEsApYm12sQ1JLje92U72_f0wZ2t99JuZZzukj__eUFQka45IjbQxouWJH-Yo3u4vHw1V97zh6XMsi_Dlx0GiTJf3vf20C1T0DTagZZcqiroQPlovE1t0Mrv76311CQ3DtppgWvlkyX-HMkLl4qy5vtajcqMffQmjaG5kDw"> Log in with Facebook</a></button>
-        <a href="#" class="forgot-pwd">Forgot password?</a>
-       </div>
-       <div class="signup-container">
-        <p class="signup-link">Don't have an account? <button id="toggle-form-btn" class="stolbox btn stol" >Sign up </button> </p>
+        <input type="text" id="email" class="input-field" placeholder="Mobile Number or Email">
+        <input type="password" id="password" class="input-field" placeholder="Password">
+        <input type="text" id="fullname" class="input-field" placeholder="Full Name">
+        <input type="text" id="username" class="input-field" placeholder="Username">
+       
+        <p class="terms1">People who use our may have uploaded your contact information to Instagram . <a href="https://help.instagram.com/519522125107875">Learn more</a> </p>
+        <p class="terms2">By signing up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy</a> <a href="#">Policy</a> and <a href="#">Cookies Policy</a>.</p> 
+        <button class="signup-btn">Sign up</button>
+    </div>
+    <div class="login-container">
+        <p class="login">Have an account? <a href="instalogin.html">Log in</a></p>
     </div>
         <div>
         <p class="app">Get the app.</p>
         <div class="app-icons">
-            <img alt="Get it on Google Play" class="x1vqgdyp" src="https://static.cdninstagram.com/rsrc.php/v4/yz/r/c5Rp7Ym-Klz.png">
-            <img alt="Get it from Microsoft" class="x1vqgdyp" src="https://static.cdninstagram.com/rsrc.php/v4/yu/r/EHY6QnZYdNX.png">
+         <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D3C6D9F9A-4F6B-4643-A1F6-DA59B8D08831%26utm_campaign%3DsignupPage%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge">   <img alt="Get it on Google Play" class="x1vqgdyp" src="https://static.cdninstagram.com/rsrc.php/v4/yz/r/c5Rp7Ym-Klz.png"></a>
+         <a href="ms-windows-store://pdp/?productid=9nblggh5l9xt&amp;referrer=appbadge&amp;source=www.instagram.com&amp;mode=mini&amp;pos=-6%2C0%2C516%2C735" rel="nofollow noreferrer">   <img alt="Get it from Microsoft" class="x1vqgdyp" src="https://static.cdninstagram.com/rsrc.php/v4/yu/r/EHY6QnZYdNX.png"></a>
         </div>
     </div>  
     <footer>
@@ -51,6 +56,6 @@
          
         <p class="endftr">English &copy; 2025 Instagram from Meta</p>
     </footer>
-<script src="instalogin.js"></script>
+<script src="instasignup.js"></script>
 </body>
 </html>

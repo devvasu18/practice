@@ -9,7 +9,7 @@ if (userProfilePic && userProfilePic.trim() !== "") {
     profilePicElement.src = userProfilePic; // Set user profile image
 } else {
     // If no image is found, keep the default image already set in HTML
-    console.log("No profile image found in user account. Using default.");
+   // console.log("No profile image found in user account. Using default.");
 }
 
 
@@ -30,11 +30,10 @@ document.querySelectorAll(".like-btn").forEach(button => {
     });
 });
 
+
+
+
 // Function to handle double-click on the image
 document.querySelector(".post-image").addEventListener("dblclick", function() {
     toggleLike(); // Call the toggleLike function on double-click
 });
-
-
-//heartBtn.innerHTML = "&#9825;"
- //heartBtn.innerHTML = "&#10084;"

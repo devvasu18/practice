@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox &middot; Chat</title>
+    <link rel="stylesheet" href="instamessage.css">
+    <link rel="icon" href="insta_logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="messageContainer">
+        <!-- Sidebar -->
+        <div class="user-list">
+            <h3>Chats</h3>
+        </div>
+        
+        <!-- Chat Section -->
+        <div class="chat-section">
+            <div class="empty-state">
+                <p class="urmsg">Your messages</p>
+                <p class="sdmsg">Send a message to start a chat</p>
+            </div>
+            <div class="chat-window" id="chatWindow"></div>
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendMessage">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="instamessage.js"></script>
+</body>
+</html>
