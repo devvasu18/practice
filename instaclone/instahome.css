@@ -308,4 +308,14 @@ nav a {
     color: red; /* Filled color when liked */
 }
 
-
+.tglham{
+    display: none;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+}

@@ -183,3 +183,17 @@ footer ul li a {
   #toggle-form-btn:hover {
     text-decoration: underline;
   }
+
+    .toggle-btn {
+        margin-left: -50px;
+        margin-top: 20px;
+        position: absolute;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color:#777;
+      cursor: pointer;
+      font-weight: bold;
+    }
+     
+    

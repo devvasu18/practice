@@ -1,39 +1,91 @@
-// Get user data (for example, from localStorage or API)
-const userProfilePic = localStorage.getItem("userProfilePic"); // Get stored profile pic URL
-const userGender = localStorage.getItem("userGender"); // Get stored gender ("male" or "female")
+const userProfilePic = localStorage.getItem("userProfilePic"); 
+const userGender = localStorage.getItem("userGender"); 
 
 const profilePicElement = document.querySelector(".profile-pic");
 
 // Check if a profile picture exists
 if (userProfilePic && userProfilePic.trim() !== "") {
-    profilePicElement.src = userProfilePic; // Set user profile image
-} else {
-    // If no image is found, keep the default image already set in HTML
-   // console.log("No profile image found in user account. Using default.");
+    profilePicElement.src = userProfilePic; 
 }
 
 
 document.querySelectorAll(".like-btn").forEach(button => {
     button.addEventListener("click", function () {
-        let likeCountSpan = this.nextElementSibling; // Get the like count span
-        let currentCount = parseInt(likeCountSpan.textContent);
-
-        if (this.classList.contains("liked")) {
-            this.classList.remove("liked");
-            this.innerHTML = "&#9825;"; // Outline heart (♡)
-            likeCountSpan.innerText = currentCount - 1; // Decrease like count
-        } else {
-            this.classList.add("liked");
-            this.innerHTML = "&#10084;"; // Filled heart (♥)
-            likeCountSpan.innerText = currentCount + 1; // Increase like count
-        }
+        handleLike(this);
+        showHeartAnimation(this);
     });
 });
 
+// Double-click like on post image
+document.querySelectorAll(".post-image").forEach(image => {
+    image.addEventListener("dblclick", function () {
+        let post = this.closest(".post"); 
+        let likeButton = post.querySelector(".like-btn"); 
+        handleLike(likeButton);
 
+        showHeartAnimation(this);
+    });
+});
 
+// Handle like/unlike function
+function handleLike(button) {
+    let likeCountSpan = button.nextElementSibling;
+    let currentCount = parseInt(likeCountSpan.textContent);
 
-// Function to handle double-click on the image
-document.querySelector(".post-image").addEventListener("dblclick", function() {
-    toggleLike(); // Call the toggleLike function on double-click
+    if (button.classList.contains("liked")) {
+        button.classList.remove("liked");
+        button.innerHTML = "&#9825;"; 
+        likeCountSpan.innerText = currentCount - 1;
+    } else {
+        button.classList.add("liked");
+        button.innerHTML = "&#10084;";
+        likeCountSpan.innerText = currentCount + 1;
+    }
+}
+
+//  Show a quick heart animation when double-clicked
+function showHeartAnimation(imageElement) {
+    let heart = document.createElement("div");
+    heart.innerHTML = "&#10084;";
+    heart.style.position = "absolute";
+    heart.style.fontSize = "80px";
+    heart.style.color = "rgba(255,0,0,0.8)";
+    heart.style.left = "50%";
+    heart.style.top = "50%";
+    heart.style.transform = "translate(-50%, -50%)";
+    heart.style.pointerEvents = "none";
+    heart.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+
+    imageElement.parentElement.style.position = "relative";
+    imageElement.parentElement.appendChild(heart);
+
+    setTimeout(() => {
+        heart.style.opacity = "0";
+        heart.style.transform = "translate(-50%, -50%) scale(1.5)";
+    }, 0);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 800);
+}
+
+function toggleButtons() {
+    const buttons = document.querySelectorAll('.tglham');
+    buttons.forEach(button => {
+      if (button.style.display === 'none' || button.style.display === '') {
+        button.style.display = 'block'; 
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  }
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.addEventListener('click', toggleButtons);
+
+const tglhamButtons = document.querySelectorAll('.tglham');
+tglhamButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Redirecting
+    window.location.href = 'http://127.0.0.1:5500/instaclone/instalogin.html'; 
+  });
 });

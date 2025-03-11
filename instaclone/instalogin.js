@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "instasignup.html";
         });
     } else {
-        console.error("Button with ID 'toggle-form-btn' not found!");
+        console.error(" new error founded !");
     }
 });
 
@@ -20,7 +20,7 @@ window.onload = function () {
     }
 
     loginBtn.addEventListener("click", function () {
-        const userInput = document.getElementById("username"); // Can be email, username, or phone
+        const userInput = document.getElementById("username"); 
         const passwordInput = document.getElementById("password");
 
         if (!userInput || !passwordInput) {
@@ -43,44 +43,46 @@ window.onload = function () {
         const user = users.find(user => 
             user.email === loginValue || 
             user.username === loginValue || 
-            user.phone === loginValue // Ensure phone number is stored during signup
+            user.phone === loginValue 
         );
 
         if (!user) {
             alert("User does not exist. Please sign up.");
             return;
         }
-
-        // Check if password matches
         if (user.password !== password) {
             alert("Incorrect password. Please try again.");
             return;
         }
 
-        // Store logged-in user session (optional)
         localStorage.setItem("loggedInUser", JSON.stringify(user));
 
-        alert("Login successful! Redirecting...");
+      //  alert("Login successful! Redirecting...");
         window.location.href = "instahomepage.html";
     });
 };
 
-// Login function to authenticate user and store session data
-function loginUser(username) {
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-    let user = users.find(u => u.username === username);
+//show hide function
+function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const toggleBtn = document.querySelector('.toggle-btn');
 
-    if (user) {
-        sessionStorage.setItem("loggedInUser", JSON.stringify(user)); // Use sessionStorage
-        window.location.href = "instamessage.html"; // Redirect to messages
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleBtn.textContent = 'Hide';
     } else {
-        alert("User not found!");
+      passwordInput.type = 'password';
+      toggleBtn.textContent = 'Show';
     }
-}
+  }
+//function of show hide button
+  const input = document.getElementById("password");
+  const button = document.getElementById("toggle-btn");
 
-// Sample users (Only set if not already in localStorage)
-if (!localStorage.getItem("users")) {
-    let users = [ 
-    ];
-    localStorage.setItem("users", JSON.stringify(users));
-}
+  input.addEventListener("input", () => {
+    if (input.value.trim() !== "") {
+      button.style.display = "inline-block"; 
+    } else {
+      button.style.display = "none"; 
+    }
+  });
