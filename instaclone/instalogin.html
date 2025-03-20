@@ -9,19 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-        
     <div class="login-container">
         <h1 class="isntah1"></h1>
         <input type="text" id="username" class="input-field" placeholder="Phone number, username, or email">
        <div> <input type="password" id="password" class="input-field" placeholder="Password"> 
         <button class="toggle-btn" id="toggle-btn" style="display: none;" onclick="togglePassword()">Show</button></div>
-        <button class="login-btn">Log in</button>
+        <button class="login-btn" type="submit">Log in</button>
         <div class="separator">
             <div class="line"></div>
             <span class="or">OR</span>
             <div class="line"></div>
         </div>
         <button class="fb-btn"> <i class="fa-brands fa-facebook"></i> <a class="fb-btn" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Foidc%2F%3Fapp_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignupviafb%252F%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bprofile%2Blinking%26state%3DATDApmXRgJ10kzrK-DV3qIHH6MmyT1wpxrncniXldvj-gjkNENPh2gyQonK-7K9x1ImzZx3r9Vp3mrGltLqAUUUVLCqsQ8r8mYwajwNuUQAsTsofZuaVFedPdYEj8gwQTr0UeFBy_6tyQ9tRD309f0HCXl89uWEkhINT8Mf_5NBdSPZlhrpumKUJJHS0hg4JRhBeyp-6Z8SubCD22PwSNuiGWqRm4WvhBNnSIvypswrSKNSH4MYxC9nWR3ckBdV6TGkN7dpz7QU8PSTz9Rrwm1aTFNwfRHFqyFxyEsApYm12sQ1JLje92U72_f0wZ2t99JuZZzukj__eUFQka45IjbQxouWJH-Yo3u4vHw1V97zh6XMsi_Dlx0GiTJf3vf20C1T0DTagZZcqiroQPlovE1t0Mrv76311CQ3DtppgWvlkyX-HMkLl4qy5vtajcqMffQmjaG5kDw"> Log in with Facebook</a></button>
+        <div id="error-div" style="color: rgba(255, 0, 0, 0.795);"></div>
         <a href="#" class="forgot-pwd">Forgot password?</a>
        </div>
        <div class="signup-container">

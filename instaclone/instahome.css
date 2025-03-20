@@ -66,7 +66,7 @@ body {
 }
 
 .stories {
-    width: 650px; /* Adjust width */
+    width: 700px; /* Adjust width */
     display: flex;
     overflow-x: auto; /* Enables horizontal scrolling */
     white-space: nowrap; /* Prevents wrapping */
@@ -185,7 +185,8 @@ body {
 
 
 .right-sidebar {
-    margin-left: 480px;
+    position: fixed;
+    margin-left: 1100px;
     width: 20%;
     padding: 20px;
     background: white;
@@ -251,7 +252,7 @@ margin-top: 10px;}
         margin-left: -40px;
     }
    .stories {
-    width: 450px; /* Adjust width */
+    width: 490px; /* Adjust width */
     margin-left: 0px;
    }
 
